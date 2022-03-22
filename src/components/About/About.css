@@ -1,9 +1,10 @@
 .about {
   flex-direction: column;
   margin-top: 3em;
+  text-align: center;
 }
 
-.about__name {
+.about__strong {
   color: var(--clr-primary);
 }
 
@@ -14,6 +15,11 @@
 .about__desc {
   font-size: 1rem;
   max-width: 600px;
+  text-align: left;
+}
+
+.about__contact {
+  justify-content: center;
 }
 
 .about__desc,
@@ -31,7 +37,6 @@
 
 @media (max-width: 600px) {
   .app .about {
-    align-items: flex-start;
     margin-top: 2em;
   }
 }

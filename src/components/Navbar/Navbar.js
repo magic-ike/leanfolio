@@ -4,7 +4,7 @@ import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../../contexts/theme'
-import { projects, skills, contact } from '../../portfolio'
+import { about, projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -13,12 +13,24 @@ const Navbar = () => {
 
   const toggleNavList = () => setShowNavList(!showNavList)
 
+  const { name } = about
+
   return (
     <nav className='center nav'>
       <ul
         style={{ display: showNavList ? 'flex' : null }}
         className='nav__list'
       >
+        {name ? (
+          <li className='nav__list-item'>
+            <strong>
+              <a href='#top' onClick={toggleNavList} className='link'>
+                {name}
+              </a>
+            </strong>
+          </li>
+        ) : null}
+
         {projects.length ? (
           <li className='nav__list-item'>
             <a
@@ -58,20 +70,20 @@ const Navbar = () => {
 
       <button
         type='button'
-        onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
-      >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
-
-      <button
-        type='button'
         onClick={toggleNavList}
         className='btn btn--icon nav__hamburger'
         aria-label='toggle navigation'
       >
         {showNavList ? <CloseIcon /> : <MenuIcon />}
+      </button>
+
+      <button
+        type='button'
+        onClick={toggleTheme}
+        className='btn btn--icon nav__theme'
+        aria-label='toggle theme'
+      >
+        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>
     </nav>
   )

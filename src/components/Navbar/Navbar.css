@@ -1,9 +1,17 @@
+.nav {
+  height: 8em;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
 .nav__list {
   margin-right: 1.5em;
   display: flex;
 }
 .nav__list-item {
-  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
 .app .nav__hamburger {
@@ -15,6 +23,10 @@
 }
 
 @media (max-width: 600px) {
+  .nav {
+    height: 6em;
+  }
+
   .nav__list {
     display: none;
     flex-direction: column;
@@ -34,6 +46,6 @@
   .app .nav__hamburger {
     display: flex;
     z-index: 2;
-    margin-left: 0.8em;
+    margin-right: 0.8em;
   }
 }

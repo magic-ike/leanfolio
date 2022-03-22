@@ -1,13 +1,8 @@
-const header = {
-  // all the properties are optional - can be left empty or deleted
-  homepage: 'https://magic-ike.github.io/spotfolio',
-  title: 'JS.',
-}
-
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'John Smith',
-  role: 'Front End Engineer',
+  role: 'Software Engineer',
+  company: 'Acme Labs',
   description:
     'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
   resume: 'https://example.com',
@@ -15,6 +10,7 @@ const about = {
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
   },
+  greetingEmoji: '👋',
 }
 
 const projects = [
@@ -38,6 +34,14 @@ const projects = [
   },
   {
     name: 'Project 3',
+    description:
+      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
+    stack: ['SASS', 'TypeScript', 'React'],
+    sourceCode: 'https://github.com',
+    livePreview: 'https://github.com',
+  },
+  {
+    name: 'Project 4',
     description:
       'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
     stack: ['SASS', 'TypeScript', 'React'],
@@ -68,4 +72,4 @@ const contact = {
   email: 'johnsmith@mail.com',
 }
 
-export { header, about, projects, skills, contact }
+export { about, projects, skills, contact }

@@ -1,6 +1,4 @@
 .skills__list {
-  max-width: 450px;
-  width: 95%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
