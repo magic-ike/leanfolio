@@ -1,5 +1,4 @@
-import { contact } from '../../portfolio'
-import './Contact.css'
+import { contact } from '../data/portfolio'
 
 const Contact = () => {
   if (!contact.email) return null
