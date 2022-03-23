@@ -42,3 +42,5 @@ export const getTopTracks = async () => {
     },
   })
 }
+
+export const spotifyCredsAreValid = client_id && client_secret && refresh_token

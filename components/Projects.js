@@ -1,6 +1,6 @@
 import uniqid from 'uniqid'
 import { projects } from '../data/portfolio'
-import ProjectContainer from './ProjectContainer'
+import ProjectCard from './ProjectCard'
 
 const Projects = () => {
   if (!projects.length) return null
@@ -12,7 +12,7 @@ const Projects = () => {
 
       <div className='projects__grid'>
         {projects.map((project) => (
-          <ProjectContainer key={uniqid()} project={project} />
+          <ProjectCard key={uniqid()} project={project} />
         ))}
       </div>
     </section>

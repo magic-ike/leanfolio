@@ -14,7 +14,7 @@ const about = {
 }
 
 const projects = [
-  // projects can be added an removed
+  // projects can be added and removed
   // if there are no projects, Projects section won't show up
   {
     name: 'Project 1',
@@ -67,9 +67,16 @@ const skills = [
   'Enzyme',
 ]
 
+const activity = {
+  // showing activity is optional - the properties can be set to false or deleted
+  // if no properties are true, Activity section won't show up
+  showNowPlaying: true,
+  showTopTracks: true,
+}
+
 const contact = {
   // email is optional - if left empty Contact section won't show up
   email: 'johnsmith@mail.com',
 }
 
-export { about, projects, skills, contact }
+export { about, projects, skills, activity, contact }

@@ -73,7 +73,7 @@ main {
 
 .link--nav {
   color: var(--clr-fg);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   font-weight: 500;
 }
 
@@ -143,6 +143,10 @@ main {
 
 .btn--icon:active {
   transform: translateY(-5px);
+}
+
+.text--strong {
+  color: var(--clr-primary);
 }
 
 @media (max-width: 600px) {

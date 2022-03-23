@@ -11,7 +11,7 @@ const About = () => {
     <div className='about center'>
       {firstName && (
         <h1>
-          Hey, I&apos;m <span className='about__strong'>{firstName}</span>.
+          Hey, I&apos;m <span className='text--strong'>{firstName}</span>.
           {greetingEmoji && <span> {greetingEmoji}</span>}
         </h1>
       )}
@@ -22,7 +22,7 @@ const About = () => {
           {company && (
             <span>
               {' '}
-              at <span className='about__strong'>{company}</span>
+              at <span className='text--strong'>{company}</span>
             </span>
           )}
           .
@@ -32,7 +32,7 @@ const About = () => {
 
       <div className='about__contact center'>
         {resume && (
-          <a href={resume}>
+          <a href={resume} target='_blank'>
             <span type='button' className='btn btn--outline'>
               Resume
             </span>
@@ -44,6 +44,7 @@ const About = () => {
             {social.github && (
               <a
                 href={social.github}
+                target='_blank'
                 aria-label='github'
                 className='link link--icon'
               >
@@ -54,6 +55,7 @@ const About = () => {
             {social.linkedin && (
               <a
                 href={social.linkedin}
+                target='_blank'
                 aria-label='linkedin'
                 className='link link--icon'
               >

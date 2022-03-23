@@ -4,18 +4,12 @@
   text-align: center;
 }
 
-.about__strong {
-  color: var(--clr-primary);
-}
-
 .about__role {
   margin-top: 1.2em;
 }
 
 .about__desc {
   font-size: 1rem;
-  max-width: 600px;
-  text-align: left;
 }
 
 .about__contact {

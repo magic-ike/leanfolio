@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getNowPlaying } from '../../lib/spotify'
+import { spotifyCredsAreValid, getNowPlaying } from '../../lib/spotify'
 
 import Filter from 'bad-words'
 const filter = new Filter()
@@ -8,6 +8,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (!spotifyCredsAreValid) res.json(null)
+
   const response = await getNowPlaying()
 
   if (response.status === 204 || response.status > 400) {
@@ -35,5 +37,5 @@ export default async function handler(
     'public, s-maxage=60, stale-while-revalidate=30'
   )
 
-  return res.status(200).json({ track })
+  return res.status(200).json(track)
 }

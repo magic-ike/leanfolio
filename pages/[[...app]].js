@@ -2,10 +2,11 @@ import { useState, useEffect, useContext } from 'react'
 import { ThemeContext } from '../contexts/theme'
 import Navbar from '../components/Navbar'
 import About from '../components/About'
-import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-import ScrollToTop from '../components/ScrollToTop'
+import Projects from '../components/Projects'
 import Contact from '../components/Contact'
+import Activity from '../components/Activity'
+import ScrollToTop from '../components/ScrollToTop'
 import Footer from '../components/Footer'
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
 
       <main>
         <About />
-        <Projects />
         <Skills />
+        <Projects />
+        <Activity />
         <Contact />
       </main>
 

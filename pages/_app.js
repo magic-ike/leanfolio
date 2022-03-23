@@ -8,21 +8,28 @@ import '../styles/About.css'
 import '../styles/Contact.css'
 import '../styles/Footer.css'
 import '../styles/Navbar.css'
-import '../styles/ProjectContainer.css'
+import '../styles/ProjectCard.css'
 import '../styles/Projects.css'
 import '../styles/ScrollToTop.css'
 import '../styles/Skills.css'
+import '../styles/Activity.css'
+import '../styles/TrackCard.css'
 import { ThemeProvider } from '../contexts/theme'
+import { ActivityProvider } from '../contexts/activity'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <title>John Smith</title>
       </Head>
-      <Component {...pageProps} />
-    </ThemeProvider>
+      <ThemeProvider>
+        <ActivityProvider>
+          <Component {...pageProps} />
+        </ActivityProvider>
+      </ThemeProvider>
+    </>
   )
 }
 

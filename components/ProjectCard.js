@@ -2,7 +2,7 @@ import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 
-const ProjectContainer = ({ project }) => (
+const ProjectCard = ({ project }) => (
   <div className='project'>
     <h3>{project.name}</h3>
 
@@ -20,6 +20,7 @@ const ProjectContainer = ({ project }) => (
     {project.sourceCode && (
       <a
         href={project.sourceCode}
+        target='_blank'
         aria-label='source code'
         className='link link--icon'
       >
@@ -30,6 +31,7 @@ const ProjectContainer = ({ project }) => (
     {project.livePreview && (
       <a
         href={project.livePreview}
+        target='_blank'
         aria-label='live preview'
         className='link link--icon'
       >
@@ -39,4 +41,4 @@ const ProjectContainer = ({ project }) => (
   </div>
 )
 
-export default ProjectContainer
+export default ProjectCard

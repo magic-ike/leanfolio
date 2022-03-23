@@ -1,0 +1,19 @@
+.track {
+  padding: 2em;
+  margin: 1em 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s linear;
+  display: flex;
+  align-items: center;
+}
+
+.track:hover {
+  transform: translateY(-7px);
+}
+
+.track__photo {
+  height: 5em;
+  width: 5em;
+  border-radius: 0.5em;
+  margin-right: 1.5em;
+}

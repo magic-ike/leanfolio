@@ -4,15 +4,18 @@ import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../contexts/theme'
-import { about, projects, skills, contact } from '../data/portfolio'
+import { ActivityContext } from '../contexts/activity'
+import { about, projects, skills, activity, contact } from '../data/portfolio'
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
+  const [{ nowPlaying, topTracks }] = useContext(ActivityContext)
   const [showNavList, setShowNavList] = useState(false)
 
-  const toggleNavList = () => setShowNavList(!showNavList)
-
   const { name } = about
+  const { showNowPlaying, showTopTracks } = activity
+
+  const toggleNavList = () => setShowNavList(!showNavList)
 
   return (
     <nav className='center nav'>
@@ -20,7 +23,7 @@ const Navbar = () => {
         style={{ display: showNavList ? 'flex' : null }}
         className='nav__list'
       >
-        {name ? (
+        {name && (
           <li className='nav__list-item'>
             <strong>
               <a href='#top' onClick={toggleNavList} className='link'>
@@ -28,21 +31,9 @@ const Navbar = () => {
               </a>
             </strong>
           </li>
-        ) : null}
+        )}
 
-        {projects.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#projects'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Projects
-            </a>
-          </li>
-        ) : null}
-
-        {skills.length ? (
+        {skills.length && (
           <li className='nav__list-item'>
             <a
               href='#skills'
@@ -52,9 +43,33 @@ const Navbar = () => {
               Skills
             </a>
           </li>
-        ) : null}
+        )}
 
-        {contact.email ? (
+        {projects.length && (
+          <li className='nav__list-item'>
+            <a
+              href='#projects'
+              onClick={toggleNavList}
+              className='link link--nav'
+            >
+              Projects
+            </a>
+          </li>
+        )}
+
+        {((showNowPlaying && nowPlaying) || (showTopTracks && topTracks)) && (
+          <li className='nav__list-item'>
+            <a
+              href='#activity'
+              onClick={toggleNavList}
+              className='link link--nav'
+            >
+              Activity
+            </a>
+          </li>
+        )}
+
+        {contact.email && (
           <li className='nav__list-item'>
             <a
               href='#contact'
@@ -64,7 +79,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-        ) : null}
+        )}
       </ul>
 
       <button
