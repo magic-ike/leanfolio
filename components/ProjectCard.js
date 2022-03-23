@@ -21,6 +21,7 @@ const ProjectCard = ({ project }) => (
       <a
         href={project.sourceCode}
         target='_blank'
+        rel='noreferrer'
         aria-label='source code'
         className='link link--icon'
       >
@@ -32,6 +33,7 @@ const ProjectCard = ({ project }) => (
       <a
         href={project.livePreview}
         target='_blank'
+        rel='noreferrer'
         aria-label='live preview'
         className='link link--icon'
       >

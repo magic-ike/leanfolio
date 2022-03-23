@@ -2,7 +2,12 @@ function TrackCard({ track }) {
   const trackIsNotPlaying = track.isPlaying === false
   const Component = trackIsNotPlaying ? 'div' : 'a'
   return (
-    <Component className='track' href={track.songUrl} target='_blank'>
+    <Component
+      className='track'
+      href={track.songUrl}
+      target='_blank'
+      rel='noreferrer'
+    >
       <img
         className='track__photo'
         src={trackIsNotPlaying ? '/assets/spotify.svg' : track.albumImageUrl}

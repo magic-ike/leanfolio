@@ -1,72 +1,54 @@
 # Spotfolio
 
-A portfolio template built with React that uses the Spotify API to let you also showcase the song you're currently listening to, as well as your top 3 tracks. If sharing personal metrics isn't your style, then check out [the original repo](https://github.com/rajshekhar26/cleanfolio) that this is forked from. However, if you run into any issues setting up that project locally or deploying, the instructions on this README might be more helpful.
+A portfolio template built with Next.js that uses the Spotify API to let you optionally showcase your music preferences. This repo is forked from the Cleanfolio repo which you can find [here](https://github.com/rajshekhar26/cleanfolio).
+
+## Differences between this project and Cleanfolio
+
+- This project uses the [Next.js](https://nextjs.org/) framework which lets us take advantage of Next.js [API Routes](https://nextjs.org/docs/api-routes/introduction) among other features. API Routes allow us to build both the site's front-end and its API with the same framework and host them in same environment ([Vercel](https://vercel.com)).
+
+- Integration with the [Spotify API](https://developer.spotify.com/documentation/web-api/) to let you **optionally** showcase the song you're currently listening to and/or your top 3 tracks
+
+- Improved README documentation
+
+- Improved user interface
 
 ## Preview
 
-[![Imgur]()]()
+<!-- ![Imgur]() -->
 
-[Live Demo (My Portfolio Site)](https://iodev.io)
+[Live Demo (My Site)](https://iodev.io)
 
 ## Instructions
 
-### Setup
+### Running Locally
 
-Clone the repo
+npm
 
 ```shell
-git clone https://github.com/magic-ike/spotfolio
+git clone https://github.com/magic-ike/spotfolio.git
 cd spotfolio
+npm install
+npm run dev
 ```
 
-Install the dependencies
+yarn
 
 ```shell
-npm install # for npm
-yarn # for yarn
-```
-
-Start the server
-
-```shell
-npm run start # for npm
-yarn start # for yarn
-```
-
-**Note:** If you're using Node version 17+, you should instead be using the Node v17+ versions of the React scripts `start`, `build`, `test`, and `eject` (they're denoted by the `:n17` suffix). The above code would instead be:
-
-```shell
-npm run start:n17 # for npm
-yarn start:n17 # for yarn
+git clone https://github.com/magic-ike/spotfolio.git
+cd spotfolio
+yarn
+yarn dev
 ```
 
 ### Making Changes
 
-- Open `public/index.html` and replace `<title>John Smith</title>` with `<title>Your Name</title>`.
+- Go to `pages/_app.js` and replace `<title>John Smith</title>` with `<title>Your Name</title>`.
 
-- Open `src/portfolio.js` and replace the dummy data with your own.
+- Go to `data/portfolio.js` and replace the dummy data with your own.
 
-### Deployment
+### Spotify (Optional)
 
-- Open `package.json` and replace `"homepage": "https://magic-ike.github.io/spotfolio"` with `"homepage": "https://your_github_username.github.io/your_repo_name"`.
-
-- Build
-
-```shell
-npm run build # for npm
-yarn build # for yarn
-```
-
-- Deploy
-
-```shell
-npm run deploy # for npm
-yarn deploy # for yarn
-```
-
-### Spotify
-
-To get the Spotify data to populate, you'll need to create a `.env.local` file in your root directory and add the add the following code:
+To get the Spotify data to populate locally, you'll need to create a `.env.local` file in your root directory to store some environment variables. Create the file and paste in the following code:
 
 ```shell
 SPOTIFY_CLIENT_ID=$CLIENT_ID
@@ -84,7 +66,7 @@ To get the Client ID, Client Secret, and Refresh Token, you'll need to do the fo
 
 - Click **Show Client Secret**.
 
-- You now have the Client ID and Client Secret. Save these for later.
+- You should now see the Client ID and Client Secret. Save these for later.
 
 - Click **Edit Settings**.
 
@@ -102,9 +84,9 @@ user-top-read
 
 > localhost:3000/?**code=NApCCg..BkWtQ**
 
-- The value is your Authorization Code. Save it for later.
+- The value after `code=` is your Authorization Code. Save it for later.
 
-- Now we're ready to get the Refresh Token. Run the following command in your terminal (replace `$CLIENT_ID`, `$CLIENT_SECRET`, and `$CODE` with your actual Client ID, Client Secret, and Authorization Code respectively)
+- Now we're ready to get the Refresh Token. Run the following cURL command in your terminal (replace `$CLIENT_ID`, `$CLIENT_SECRET`, and `$CODE` with your actual Client ID, Client Secret, and Authorization Code respectively)
 
 ```shell
 curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=authorization_code -d code=$CODE -d redirect_uri=http://localhost:3000 https://accounts.spotify.com/api/token
@@ -122,7 +104,7 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 }
 ```
 
-- Save $REFRESH_TOKEN as this is your Refresh Token. This token will last for a very long time unless you revoke access.
+- Save `$REFRESH_TOKEN` as this is your Refresh Token. This token will last for a very long time unless you revoke access.
 
 - After running the last command, you may instead get the following output:
 
@@ -135,7 +117,27 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 
 - In that case, just repeat the step where you navigate to the `https://accounts.spotify.com/authorize...` URL in your browser, then repeat the steps after that.
 
-- If everything went smoothly, you should now have the Client ID, Client Secret, and Refresh Token. Plug those 3 credentials into the `.env.local` file and you should be good to go. 🎉
+- If everything went smoothly, you should now have the Client ID, Client Secret, and Refresh Token. Plug those 3 credentials into the `.env.local` file and you should be good to go.
+
+### Deployment
+
+- Go to [Vercel](https://vercel.com/dashboard) and sign up for an account if necessary.
+
+- Click **New Project**.
+
+- Import your repository. This should take you to the project configuration screen.
+
+- **(Optional)** If you want your Spotify data to populate on your live portfolio, you'll need to grab the environment variables you added to your local environment and add them to this environment. Expand the **Environment Variables** dropdown and add the following name-value pairs:
+
+| NAME                  | VALUE (WILL BE ENCRYPTED) |
+| --------------------- | ------------------------- |
+| SPOTIFY_CLIENT_ID     | Your Client ID            |
+| SPOTIFY_CLIENT_SECRET | Your Client Secret        |
+| SPOTIFY_REFRESH_TOKEN | Your Refresh Token        |
+
+- Click **Deploy**.
+
+- If everything went smoothly, your portfolio site should now be live. Congrats! 🎉
 
 ## License
 

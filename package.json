@@ -2,7 +2,6 @@
   "name": "spotfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://magic-ike.github.io/spotfolio",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
@@ -22,11 +21,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "react-scripts test",
-    "test:n17": "react-scripts --openssl-legacy-provider test",
-    "eject": "react-scripts eject",
-    "eject:n17": "react-scripts --openssl-legacy-provider eject",
-    "lint": "eslint .",
+    "lint": "next lint",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "browserslist": {
@@ -47,6 +42,7 @@
     "@types/react": "^17.0.41",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "18.2.1",
+    "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
