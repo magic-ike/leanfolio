@@ -1,4 +1,4 @@
-function TrackCard({ track }) {
+const TrackCard = ({ track }) => {
   const trackIsNotPlaying = track.isPlaying === false
   const Component = trackIsNotPlaying ? 'div' : 'a'
   return (

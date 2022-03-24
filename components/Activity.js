@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import uniqid from 'uniqid'
 import TrackCard from './TrackCard'
+import Spacer from './Spacer'
 import { ActivityContext } from '../contexts/activity'
 import { activity } from '../data/portfolio'
 
@@ -10,12 +11,12 @@ const Activity = () => {
 
   return (showNowPlaying && nowPlaying) || (showTopTracks && topTracks) ? (
     <section id='activity' className='section activity'>
-      <br />
+      <Spacer height={2} />
       <h2 className='section__title'>Spotify Activity</h2>
 
       {showNowPlaying && nowPlaying && (
         <>
-          <br />
+          <Spacer height={1} />
           <h3 className='section__title'>Currently Listening To</h3>
           <TrackCard key={uniqid()} track={nowPlaying} />
         </>
@@ -23,8 +24,8 @@ const Activity = () => {
 
       {showTopTracks && topTracks && (
         <>
-          {showNowPlaying && nowPlaying && <br />}
-          <br />
+          {showNowPlaying && nowPlaying && <Spacer height={1} />}
+          <Spacer height={1} />
           <h3 className='section__title'>Top Tracks</h3>
           <div className='tracks__list'>
             {topTracks.map((track) => (

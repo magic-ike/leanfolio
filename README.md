@@ -4,7 +4,7 @@ A portfolio template built with Next.js that uses the Spotify API to let you opt
 
 ## Differences between this project and Cleanfolio
 
-- This project uses the [Next.js](https://nextjs.org/) framework which lets us take advantage of Next.js [API Routes](https://nextjs.org/docs/api-routes/introduction) among other features. API Routes allow us to build both the site's front-end and its API with the same framework and host them in same environment ([Vercel](https://vercel.com)).
+- This project uses the [Next.js](https://nextjs.org/) framework which lets you take advantage of Next.js [API Routes](https://nextjs.org/docs/api-routes/introduction) among other features. API Routes allow you to build both the site's front-end and its API with the same framework and deploy them to the same environment ([Vercel](https://vercel.com)).
 
 - Integration with the [Spotify API](https://developer.spotify.com/documentation/web-api/) to let you **optionally** showcase the song you're currently listening to and/or your top 3 tracks
 

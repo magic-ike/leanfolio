@@ -1,13 +1,14 @@
 import uniqid from 'uniqid'
-import { projects } from '../data/portfolio'
 import ProjectCard from './ProjectCard'
+import Spacer from './Spacer'
+import { projects } from '../data/portfolio'
 
 const Projects = () => {
   if (!projects.length) return null
 
   return (
     <section id='projects' className='section projects'>
-      <br />
+      <Spacer height={2} />
       <h2 className='section__title'>Projects</h2>
 
       <div className='projects__grid'>

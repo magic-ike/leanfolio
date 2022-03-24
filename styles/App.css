@@ -31,7 +31,7 @@ main {
 }
 
 .section {
-  margin-top: 5em;
+  padding-top: 5em;
 }
 
 .section__title {
@@ -147,10 +147,4 @@ main {
 
 .text--strong {
   color: var(--clr-primary);
-}
-
-@media (max-width: 600px) {
-  .section {
-    margin-top: 4em;
-  }
 }

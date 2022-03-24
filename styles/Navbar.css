@@ -1,8 +1,22 @@
 .nav {
-  height: 8em;
+  height: 5em;
+  width: 100vw;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav__shadow {
+  box-shadow: var(--shadow);
+}
+
+.nav__content {
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
+  padding-top: 0.4em;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -18,15 +32,7 @@
   display: none;
 }
 
-.nav__theme {
-  margin-top: 0.4em;
-}
-
 @media (max-width: 600px) {
-  .nav {
-    height: 6em;
-  }
-
   .nav__list {
     display: none;
     flex-direction: column;
@@ -36,7 +42,6 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
   }
 
   .nav__list-item {
@@ -45,7 +50,7 @@
 
   .app .nav__hamburger {
     display: flex;
-    z-index: 2;
+    z-index: 3;
     margin-right: 0.8em;
   }
 }

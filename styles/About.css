@@ -1,6 +1,6 @@
 .about {
+  margin-top: 5em;
   flex-direction: column;
-  margin-top: 3em;
   text-align: center;
 }
 
@@ -31,6 +31,6 @@
 
 @media (max-width: 600px) {
   .app .about {
-    margin-top: 2em;
+    margin-top: 3em;
   }
 }

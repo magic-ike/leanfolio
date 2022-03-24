@@ -1,4 +1,5 @@
 import uniqid from 'uniqid'
+import Spacer from './Spacer'
 import { skills } from '../data/portfolio'
 
 const Skills = () => {
@@ -6,7 +7,7 @@ const Skills = () => {
 
   return (
     <section className='section skills' id='skills'>
-      <br />
+      <Spacer height={2} />
       <h2 className='section__title'>Skills</h2>
       <ul className='skills__list'>
         {skills.map((skill) => (
