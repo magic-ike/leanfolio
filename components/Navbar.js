@@ -16,17 +16,34 @@ const Navbar = () => {
   const { name } = about
   const { showNowPlaying, showTopTracks } = activity
 
-  const toggleNavList = () => setShowNavList(!showNavList)
-
   useEffect(() => {
-    window.onscroll = () => {
+    const handleScroll = () => {
       if (window.scrollY > 0) {
         setScrolled(true)
       } else {
         setScrolled(false)
       }
     }
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
+
+  const toggleNavList = () => {
+    if (showNavList) {
+      document.body.classList.remove('disable-scroll')
+    } else {
+      document.body.classList.add('disable-scroll')
+    }
+    setShowNavList(!showNavList)
+  }
+
+  const hideNavList = () => {
+    document.body.classList.remove('disable-scroll')
+    setShowNavList(false)
+  }
 
   return (
     <nav className={`center nav ${scrolled ? 'nav__shadow' : ''}`}>
@@ -38,7 +55,7 @@ const Navbar = () => {
           {name && (
             <li className='nav__list-item'>
               <strong>
-                <a href='#top' onClick={toggleNavList} className='link'>
+                <a href='#top' onClick={hideNavList} className='link'>
                   {name}
                 </a>
               </strong>
@@ -49,7 +66,7 @@ const Navbar = () => {
             <li className='nav__list-item'>
               <a
                 href='#skills'
-                onClick={toggleNavList}
+                onClick={hideNavList}
                 className='link link--nav'
               >
                 Skills
@@ -61,7 +78,7 @@ const Navbar = () => {
             <li className='nav__list-item'>
               <a
                 href='#projects'
-                onClick={toggleNavList}
+                onClick={hideNavList}
                 className='link link--nav'
               >
                 Projects
@@ -73,7 +90,7 @@ const Navbar = () => {
             <li className='nav__list-item'>
               <a
                 href='#activity'
-                onClick={toggleNavList}
+                onClick={hideNavList}
                 className='link link--nav'
               >
                 Activity
@@ -85,7 +102,7 @@ const Navbar = () => {
             <li className='nav__list-item'>
               <a
                 href='#contact'
-                onClick={toggleNavList}
+                onClick={hideNavList}
                 className='link link--nav'
               >
                 Contact

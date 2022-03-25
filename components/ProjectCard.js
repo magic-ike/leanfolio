@@ -6,7 +6,11 @@ const ProjectCard = ({ project }) => (
   <div className='project'>
     <h3>{project.name}</h3>
 
-    <p className='project__description'>{project.description}</p>
+    <p className='project__description'>
+      {project.description.map((item) => (
+        <span key={uniqid()}>{item}</span>
+      ))}
+    </p>
     {project.stack && (
       <ul className='project__stack'>
         {project.stack.map((item) => (

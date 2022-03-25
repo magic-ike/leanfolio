@@ -18,7 +18,9 @@ const Activity = () => {
         <>
           <Spacer height={1} />
           <h3 className='section__title'>Currently Listening To</h3>
-          <TrackCard key={uniqid()} track={nowPlaying} />
+          <div className='tracks__list'>
+            <TrackCard key={uniqid()} track={nowPlaying} />
+          </div>
         </>
       )}
 
@@ -28,8 +30,8 @@ const Activity = () => {
           <Spacer height={1} />
           <h3 className='section__title'>Top Tracks</h3>
           <div className='tracks__list'>
-            {topTracks.map((track) => (
-              <TrackCard key={uniqid()} track={track} />
+            {topTracks.map((track, i) => (
+              <TrackCard key={uniqid()} track={track} trackNumber={i + 1} />
             ))}
           </div>
         </>

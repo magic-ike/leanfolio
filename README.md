@@ -16,7 +16,7 @@ A portfolio template built with Next.js that uses the Spotify API to let you opt
 
 <!-- ![Imgur]() -->
 
-[Live Demo (My Site)](https://iodev.io)
+[Live Demo](https://spotfolio.vercel.app/)
 
 ## Instructions
 

@@ -1,4 +1,4 @@
-const TrackCard = ({ track }) => {
+const TrackCard = ({ track, trackNumber }) => {
   const trackIsNotPlaying = track.isPlaying === false
   const Component = trackIsNotPlaying ? 'div' : 'a'
   return (
@@ -8,12 +8,13 @@ const TrackCard = ({ track }) => {
       target='_blank'
       rel='noreferrer'
     >
+      {trackNumber && <h4 className='track__margin__right'>{trackNumber}</h4>}
       <img
-        className='track__photo'
+        className='track__photo track__margin__right'
         src={trackIsNotPlaying ? '/assets/spotify.svg' : track.albumImageUrl}
         alt='spotify'
       />
-      <h4>
+      <h4 className='track__artist'>
         {trackIsNotPlaying ? (
           'Nothing'
         ) : (

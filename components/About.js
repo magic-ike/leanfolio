@@ -1,3 +1,4 @@
+import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../data/portfolio'
@@ -28,7 +29,13 @@ const About = () => {
           .
         </h2>
       )}
-      {description && <p className='about__desc'>{description}</p>}
+      {description && (
+        <p className='about__desc'>
+          {description.map((item) => (
+            <span key={uniqid()}>{item}</span>
+          ))}
+        </p>
+      )}
 
       <div className='about__contact center'>
         {resume && (

@@ -15,5 +15,17 @@
   height: 5em;
   width: 5em;
   border-radius: 0.5em;
+}
+
+.track__artist {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.track__margin__right {
   margin-right: 1.5em;
 }
