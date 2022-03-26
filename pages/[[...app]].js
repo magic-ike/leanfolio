@@ -14,6 +14,12 @@ function App() {
   const [{ themeName }] = useContext(ThemeContext)
 
   useEffect(() => {
+    const oldThemeName = themeName === 'dark' ? 'light' : 'dark'
+    document.body.classList.remove(oldThemeName)
+    document.body.classList.add(themeName)
+  }, [themeName])
+
+  useEffect(() => {
     setIsMounted(true)
   }, [])
 
@@ -22,7 +28,7 @@ function App() {
   }
 
   return (
-    <div id='top' className={`${themeName} app`}>
+    <div id='top' className='app'>
       <Navbar />
 
       <main>

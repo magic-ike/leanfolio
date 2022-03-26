@@ -114,7 +114,7 @@ const Navbar = () => {
         <button
           type='button'
           onClick={toggleNavList}
-          className='btn btn--icon nav__hamburger'
+          className='btn btn--icon nav__hamburger nav__button'
           aria-label='toggle navigation'
         >
           {showNavList ? <CloseIcon /> : <MenuIcon />}
@@ -123,7 +123,7 @@ const Navbar = () => {
         <button
           type='button'
           onClick={toggleTheme}
-          className='btn btn--icon nav__theme'
+          className='btn btn--icon nav__theme nav__button'
           aria-label='toggle theme'
         >
           {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
