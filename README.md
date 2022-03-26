@@ -1,12 +1,12 @@
 # Spotfolio
 
-A portfolio template built with Next.js that uses the Spotify API to let you optionally showcase your music preferences. This repo is forked from the Cleanfolio repo which you can find [here](https://github.com/rajshekhar26/cleanfolio).
+A portfolio template built with Next.js that uses the Spotify API to let you optionally showcase your music preferences. This repo was forked from the Cleanfolio repo which you can find [here](https://github.com/rajshekhar26/cleanfolio).
 
 ## Differences between this project and Cleanfolio
 
 - This project uses the [Next.js](https://nextjs.org/) framework which lets you take advantage of Next.js [API Routes](https://nextjs.org/docs/api-routes/introduction) among other features. API Routes allow you to build both the site's front-end and its API with the same framework and deploy them to the same environment ([Vercel](https://vercel.com)).
 
-- Integration with the [Spotify API](https://developer.spotify.com/documentation/web-api/) to let you **optionally** showcase the song you're currently listening to and/or your top 3 tracks
+- Integration with the [Spotify API](https://developer.spotify.com/documentation/web-api/) to let you **optionally** showcase the song you're currently listening to and/or your top tracks
 
 - Improved README documentation
 
@@ -14,11 +14,11 @@ A portfolio template built with Next.js that uses the Spotify API to let you opt
 
 ## Preview
 
-<!-- ![Imgur]() -->
+<img src="./docs/preview.gif" width="100%">
 
 [Live Demo](https://spotfolio.vercel.app/)
 
-## Instructions
+## Usage
 
 ### Running Locally
 
@@ -45,6 +45,8 @@ yarn dev
 - Go to `pages/_app.js` and replace `<title>John Smith</title>` with `<title>Your Name</title>`.
 
 - Go to `data/portfolio.js` and replace the dummy data with your own.
+
+- To add a favicon to your site, put your `favicon.ico` file directly in the `public` folder.
 
 ### Spotify (Optional)
 
@@ -137,7 +139,7 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 
 - Click **Deploy**.
 
-- If everything went smoothly, your portfolio site should now be live. Congrats! 🎉
+- If everything went smoothly, your portfolio should now be live. Congrats! 🎉
 
 ## License
 
