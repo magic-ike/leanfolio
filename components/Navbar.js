@@ -52,15 +52,13 @@ const Navbar = () => {
           style={{ display: showNavList ? 'flex' : null }}
           className='nav__list'
         >
-          {name && (
-            <li className='nav__list-item'>
-              <strong>
-                <a href='#top' onClick={hideNavList} className='link'>
-                  {name}
-                </a>
-              </strong>
-            </li>
-          )}
+          <li className='nav__list-item'>
+            <strong>
+              <a href='#top' onClick={hideNavList} className='link'>
+                {name || 'About'}
+              </a>
+            </strong>
+          </li>
 
           {skills.length && (
             <li className='nav__list-item'>

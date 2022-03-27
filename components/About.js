@@ -4,8 +4,16 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../data/portfolio'
 
 const About = () => {
-  const { name, role, company, description, resume, social, greetingEmoji } =
-    about
+  const {
+    name,
+    role,
+    company,
+    location,
+    description,
+    resume,
+    social,
+    greetingEmoji,
+  } = about
   const firstName = name ? name.split(' ')[0] : null
 
   return (
@@ -26,7 +34,7 @@ const About = () => {
               at <span className='text--strong'>{company}</span>
             </span>
           )}
-          .
+          {location && <span> living in {location}</span>}.
         </h2>
       )}
       {description && (

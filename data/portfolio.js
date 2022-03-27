@@ -3,6 +3,7 @@ const about = {
   name: 'John Smith',
   role: 'Software Engineer',
   company: 'Acme Labs',
+  location: 'San Francisco',
   /**
    * you can separate paragraphs within the description like so:
    *
