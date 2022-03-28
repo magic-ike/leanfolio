@@ -60,18 +60,6 @@ const Navbar = () => {
             </strong>
           </li>
 
-          {skills.length && (
-            <li className='nav__list-item'>
-              <a
-                href='#skills'
-                onClick={hideNavList}
-                className='link link--nav'
-              >
-                Skills
-              </a>
-            </li>
-          )}
-
           {projects.length && (
             <li className='nav__list-item'>
               <a
@@ -80,6 +68,18 @@ const Navbar = () => {
                 className='link link--nav'
               >
                 Projects
+              </a>
+            </li>
+          )}
+
+          {skills.length && (
+            <li className='nav__list-item'>
+              <a
+                href='#skills'
+                onClick={hideNavList}
+                className='link link--nav'
+              >
+                Skills
               </a>
             </li>
           )}
