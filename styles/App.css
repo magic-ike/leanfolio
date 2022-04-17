@@ -24,6 +24,12 @@ main {
   align-items: center;
 }
 
+.paragraph__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 .link {
   color: var(--clr-primary);
   padding: 0.3em 0;

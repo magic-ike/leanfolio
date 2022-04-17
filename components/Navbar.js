@@ -46,7 +46,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`center nav ${scrolled ? 'nav__shadow' : ''}`}>
+    <nav className={`center nav ${scrolled ? 'shadow' : ''}`}>
       <div className='nav__content'>
         <ul
           style={{ display: showNavList ? 'flex' : null }}

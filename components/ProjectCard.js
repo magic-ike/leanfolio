@@ -4,13 +4,16 @@ import LaunchIcon from '@material-ui/icons/Launch'
 
 const ProjectCard = ({ project }) => (
   <div className='project'>
-    <h3>{project.name}</h3>
+    {project.name && <h3>{project.name}</h3>}
 
-    <p className='project__description'>
-      {project.description.map((item) => (
-        <span key={uniqid()}>{item}</span>
-      ))}
-    </p>
+    {project.description && (
+      <div className='project__description paragraph__list'>
+        {project.description.map((item) => (
+          <p key={uniqid()}>{item}</p>
+        ))}
+      </div>
+    )}
+
     {project.stack && (
       <ul className='project__stack'>
         {project.stack.map((item) => (

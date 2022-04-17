@@ -1307,6 +1307,18 @@ hyphenate-style-name@^1.0.3:
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
   integrity sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==
 
+hyphenated-en-us@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/hyphenated-en-us/-/hyphenated-en-us-1.2.0.tgz#03f9e227de7ad302e9c3ffad6fd9a2dbaae1340e"
+  integrity sha512-Tz9OMog//SSMnIOK18MmRumfI+r0goJZZAAVJ1Itho7r9GSZcGrGiIZNYfScAW1hqvFJLu2yRh7haa0YF+8i/Q==
+
+hyphenated@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/hyphenated/-/hyphenated-1.1.1.tgz#d63c2f938d6a2ea325ce2a036b4acccfd2a01225"
+  integrity sha512-tA9TMjyjDEmjWmkobQa/LlFJ5lhvWbJ1J9V1moemRt51Q6jWOYzpacj8C6CeH/BNM7R7SW69al/1d5a/A7K9yQ==
+  dependencies:
+    hyphenated-en-us "^1.1.1"
+
 ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
@@ -1527,7 +1539,7 @@ json5@^1.0.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
   integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   dependencies:
-    minimist "^1.2.6"
+    minimist "^1.2.0"
 
 jss-plugin-camel-case@^10.5.1:
   version "10.9.0"
@@ -1897,7 +1909,7 @@ postcss@8.4.5:
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.5.tgz#bae665764dfd4c6fcc24dc0fdf7e7aa00cc77f95"
   integrity sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==
   dependencies:
-    nanoid "^3.1.31"
+    nanoid "^3.1.30"
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
@@ -1959,6 +1971,13 @@ react-dom@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-hyphen@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-hyphen/-/react-hyphen-1.4.0.tgz#5e21701fec28d988a3f90c939df36f9a28782d0f"
+  integrity sha512-jPXdDneiH69fOMVrRhQfPxogsCIh+ju/UqDpvIdEuxzKgXU4DFZht5XyRhTTQoacAahNgujtpnLTLLDguzUacw==
+  dependencies:
+    hyphenated "1.1.1"
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

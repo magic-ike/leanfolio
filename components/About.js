@@ -1,32 +1,27 @@
 import uniqid from 'uniqid'
+import Hyphenated from 'react-hyphen'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../data/portfolio'
 
 const About = () => {
-  const {
-    name,
-    role,
-    company,
-    location,
-    description,
-    resume,
-    social,
-    greetingEmoji,
-  } = about
+  const { name, role, company, description, resume, social, greetingEmoji } =
+    about
   const firstName = name ? name.split(' ')[0] : null
 
   return (
-    <div className='about center'>
+    <div className='about'>
+      <div className='about__pseudo-padding about__pseudo-padding-top' />
+
       {firstName && (
-        <h1>
+        <h1 className='about__greeting'>
           Hey, I&apos;m <span className='text--strong'>{firstName}</span>.
           {greetingEmoji && <span> {greetingEmoji}</span>}
         </h1>
       )}
 
       {role && (
-        <h2 className='about__role'>
+        <h1 className='about__role'>
           I&apos;m a {role}
           {company && (
             <span>
@@ -34,15 +29,20 @@ const About = () => {
               at <span className='text--strong'>{company}</span>
             </span>
           )}
-          {location && <span> living in {location}</span>}.
-        </h2>
+          .
+        </h1>
       )}
       {description && (
-        <p className='about__desc'>
-          {description.map((item) => (
-            <span key={uniqid()}>{item}</span>
-          ))}
-        </p>
+        <div className='about__desc paragraph__list'>
+          <Hyphenated>
+            {description.map((item) => (
+              <p key={uniqid()}>{item}</p>
+            ))}
+            {/* fragments added to prevent react-hyphen error when description length < 2 */}
+            <></>
+            <></>
+          </Hyphenated>
+        </div>
       )}
 
       <div className='about__contact center'>
@@ -82,6 +82,8 @@ const About = () => {
           </>
         )}
       </div>
+
+      <div className='about__pseudo-padding' />
     </div>
   )
 }

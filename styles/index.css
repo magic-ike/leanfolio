@@ -11,13 +11,14 @@
   box-sizing: border-box;
 }
 
-html {
+:root {
   scroll-behavior: smooth;
+  --navabar-height: 5rem;
 }
 
 body {
-  color: var(--clr-fg);
   background-color: var(--clr-bg);
+  color: var(--clr-fg);
 }
 
 .light {
@@ -53,7 +54,7 @@ h4 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h2 {

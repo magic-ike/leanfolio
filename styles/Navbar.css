@@ -1,12 +1,12 @@
 .nav {
-  height: 5em;
+  height: var(--navabar-height);
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
-.nav__shadow {
+.nav.shadow {
   box-shadow: var(--shadow);
 }
 

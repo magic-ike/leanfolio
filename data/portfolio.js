@@ -1,14 +1,9 @@
 const about = {
   // all the properties are optional - can be left empty or deleted
+  // each element in the description array is a paragraph
   name: 'John Smith',
   role: 'Software Engineer',
   company: 'Acme Labs',
-  location: 'San Francisco',
-  /**
-   * you can separate paragraphs within the description like so:
-   *
-   * `description: ['paragraph 1', <br />, <br />, 'paragraph 2']`
-   */
   description: [
     'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
   ],
@@ -23,6 +18,7 @@ const about = {
 const projects = [
   // projects can be added and removed
   // if there are no projects, Projects section won't show up
+  // each element in the description array is a paragraph
   {
     name: 'Project 1',
     description: [
