@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { spotifyCredsAreValid, getTopTracks } from '../../lib/spotify'
+import { activity } from '../../data/portfolio'
 
 import Filter from 'bad-words'
 const filter = new Filter()
@@ -13,7 +14,13 @@ export default async function handler(
   const response = await getTopTracks()
   const { items } = await response.json()
 
-  const tracks = items.slice(0, 3).map((track) => ({
+  let tracks = items
+
+  if (activity?.hideExplicitTracks) {
+    tracks = tracks.filter((track) => !track.explicit)
+  }
+
+  tracks = tracks.slice(0, 3).map((track) => ({
     title: filter.clean(track.name),
     artist: track.artists
       .map((_artist) => filter.clean(_artist.name))

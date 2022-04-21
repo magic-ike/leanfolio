@@ -79,6 +79,7 @@ const activity = {
   // if no properties are true, Activity section won't show up
   showNowPlaying: true,
   showTopTracks: true,
+  hideExplicitTracks: true,
 }
 
 const contact = {

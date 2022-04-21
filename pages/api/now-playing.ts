@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { spotifyCredsAreValid, getNowPlaying } from '../../lib/spotify'
+import { activity } from '../../data/portfolio'
 
 import Filter from 'bad-words'
 const filter = new Filter()
@@ -19,6 +20,10 @@ export default async function handler(
   const song = await response.json()
 
   if (song.item === null) {
+    return res.status(200).json({ isPlaying: false })
+  }
+
+  if (activity?.hideExplicitTracks && song.item.explicit) {
     return res.status(200).json({ isPlaying: false })
   }
 

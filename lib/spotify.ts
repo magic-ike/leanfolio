@@ -1,3 +1,5 @@
+import { activity } from '../data/portfolio'
+
 const client_id = process.env.SPOTIFY_CLIENT_ID
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
@@ -34,9 +36,12 @@ export const getNowPlaying = async () => {
 }
 
 export const getTopTracks = async () => {
+  let topTracksEndpoint = TOP_TRACKS_ENDPOINT
+  topTracksEndpoint += activity?.hideExplicitTracks ? '?limit=50' : '?limit=3'
+
   const { access_token } = await getAccessToken()
 
-  return fetch(TOP_TRACKS_ENDPOINT, {
+  return fetch(topTracksEndpoint, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
