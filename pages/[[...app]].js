@@ -33,10 +33,12 @@ function App() {
 
       <main>
         <About />
-        <Projects />
-        <Skills />
-        <Activity />
-        <Contact />
+        <div className='animate__animated animate__fadeIn animate__delay-4s'>
+          <Projects />
+          <Skills />
+          <Activity />
+          <Contact />
+        </div>
       </main>
 
       <ScrollToTop />

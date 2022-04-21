@@ -2,6 +2,7 @@
 
 // import App from 'next/app'
 import Head from 'next/head'
+import 'animate.css'
 import '../styles/index.css'
 import '../styles/App.css'
 import '../styles/About.css'

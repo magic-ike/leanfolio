@@ -15,11 +15,6 @@
   min-height: 5em;
 }
 
-.about__greeting,
-.about__role {
-  line-height: 1.4em;
-}
-
 .about__desc {
   font-size: 1.2em;
   text-align: left;
