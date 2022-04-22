@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
-
-// import App from 'next/app'
 import Head from 'next/head'
-import 'animate.css'
+import { ThemeProvider } from '../contexts/theme'
+import { ActivityProvider } from '../contexts/activity'
 import '../styles/index.css'
 import '../styles/App.css'
 import '../styles/About.css'
@@ -15,10 +13,26 @@ import '../styles/ScrollToTop.css'
 import '../styles/Skills.css'
 import '../styles/Activity.css'
 import '../styles/TrackCard.css'
-import { ThemeProvider } from '../contexts/theme'
-import { ActivityProvider } from '../contexts/activity'
+import 'animate.css'
+
+// google analytics
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import { ga_measurement_id, pageview } from '../lib/google-analytics'
+// /google analytics
 
 function MyApp({ Component, pageProps }) {
+  // google analytics
+  // will log page views on route change if new routes are added
+  const router = useRouter()
+  useEffect(() => {
+    if (!ga_measurement_id) return
+    const handleRouteChange = (url) => pageview(url)
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => router.events.off('routeChangeComplete', handleRouteChange)
+  }, [router.events])
+  // /google analytics
+
   return (
     <>
       <Head>
@@ -33,17 +47,5 @@ function MyApp({ Component, pageProps }) {
     </>
   )
 }
-
-// Only uncomment this method if you have blocking data requirements for
-// every single page in your application. This disables the ability to
-// perform automatic static optimization, causing every page in your app to
-// be server-side rendered.
-//
-// MyApp.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//
-//   return { ...appProps }
-// }
 
 export default MyApp
