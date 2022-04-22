@@ -33,7 +33,7 @@ function App() {
 
       <main>
         <About />
-        <div className='animate__animated animate__fadeIn animate__delay-4s'>
+        <div className='animate__animated animate__fadeIn animate__delay-5s'>
           <Projects />
           <Skills />
           <Activity />
