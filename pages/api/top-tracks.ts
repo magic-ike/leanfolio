@@ -12,15 +12,14 @@ export default async function handler(
   if (!spotifyCredsAreValid) res.json([])
 
   const response = await getTopTracks()
-  const { items } = await response.json()
+  let { items: tracks } = await response.json()
 
-  let tracks = items
-
-  if (activity?.hideExplicitTracks) {
+  const { topTrackCount, hideExplicitTracks } = activity
+  if (hideExplicitTracks) {
     tracks = tracks.filter((track) => !track.explicit)
   }
 
-  tracks = tracks.slice(0, 3).map((track) => ({
+  tracks = tracks.slice(0, topTrackCount).map((track) => ({
     title: filter.clean(track.name),
     artist: track.artists
       .map((_artist) => filter.clean(_artist.name))

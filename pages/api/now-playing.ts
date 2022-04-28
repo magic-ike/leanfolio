@@ -12,18 +12,17 @@ export default async function handler(
   if (!spotifyCredsAreValid) res.json(null)
 
   const response = await getNowPlaying()
-
-  if (response.status === 204 || response.status > 400) {
+  if (response.status === 204 || response.status >= 400) {
     return res.status(200).json({ isPlaying: false })
   }
 
   const song = await response.json()
-
   if (song.item === null) {
     return res.status(200).json({ isPlaying: false })
   }
 
-  if (activity?.hideExplicitTracks && song.item.explicit) {
+  const { hideExplicitTracks } = activity
+  if (hideExplicitTracks && song.item.explicit) {
     return res.status(200).json({ isPlaying: false })
   }
 

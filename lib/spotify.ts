@@ -36,12 +36,13 @@ export const getNowPlaying = async () => {
 }
 
 export const getTopTracks = async () => {
-  let topTracksEndpoint = TOP_TRACKS_ENDPOINT
-  topTracksEndpoint += activity?.hideExplicitTracks ? '?limit=50' : '?limit=3'
+  const { topTrackCount, hideExplicitTracks } = activity
+  const limit = hideExplicitTracks ? 50 : topTrackCount ? topTrackCount : 3
+  const topTracksEndpointWithLimit = `${TOP_TRACKS_ENDPOINT}?limit=${limit}`
 
   const { access_token } = await getAccessToken()
 
-  return fetch(topTracksEndpoint, {
+  return fetch(topTracksEndpointWithLimit, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
