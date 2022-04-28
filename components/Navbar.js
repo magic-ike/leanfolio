@@ -55,7 +55,7 @@ const Navbar = () => {
           <li className='nav__list-item'>
             <strong>
               <a href='#top' onClick={hideNavList} className='link'>
-                {name || 'About'}
+                {name || 'About Me'}
               </a>
             </strong>
           </li>

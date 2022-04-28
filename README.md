@@ -44,8 +44,6 @@ yarn dev
 
 ### Making Changes
 
-- Go to `pages/_app.js` and replace `<title>John Smith</title>` with `<title>Your Name</title>`.
-
 - Go to `data/portfolio.js` and replace the dummy data with your own.
 
 - To add a favicon to your site, put your `favicon.ico` file directly in the `public` folder.

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { about } from '../data/portfolio'
 import { ThemeProvider } from '../contexts/theme'
 import { ActivityProvider } from '../contexts/activity'
 import '../styles/index.css'
@@ -37,7 +38,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <title>John Smith</title>
+        <title>{about.name || 'Portfolio'}</title>
       </Head>
       <ThemeProvider>
         <ActivityProvider>
