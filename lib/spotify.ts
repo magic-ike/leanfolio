@@ -36,8 +36,12 @@ export const getNowPlaying = async () => {
 }
 
 export const getTopTracks = async () => {
-  const { topTrackCount, hideExplicitTracks } = activity
-  const limit = hideExplicitTracks ? 50 : topTrackCount ? topTrackCount : 3
+  const { hideExplicitTracks, topTrackCount } = activity
+  const limit = hideExplicitTracks
+    ? 50
+    : typeof topTrackCount === 'number'
+    ? Math.max(topTrackCount, 1)
+    : 3
   const topTracksEndpointWithLimit = `${TOP_TRACKS_ENDPOINT}?limit=${limit}`
 
   const { access_token } = await getAccessToken()

@@ -24,7 +24,7 @@ const Activity = () => {
         </>
       )}
 
-      {showTopTracks && topTracks && (
+      {showTopTracks && topTracks.length > 0 && (
         <>
           {showNowPlaying && nowPlaying && <Spacer height={1} />}
           <Spacer height={1} />

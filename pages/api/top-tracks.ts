@@ -14,12 +14,15 @@ export default async function handler(
   const response = await getTopTracks()
   let { items: tracks } = await response.json()
 
-  const { topTrackCount, hideExplicitTracks } = activity
+  const { hideExplicitTracks, topTrackCount } = activity
   if (hideExplicitTracks) {
     tracks = tracks.filter((track) => !track.explicit)
   }
 
-  tracks = tracks.slice(0, topTrackCount).map((track) => ({
+  const limit =
+    typeof topTrackCount === 'number' ? Math.max(topTrackCount, 1) : 3
+
+  tracks = tracks.slice(0, limit).map((track) => ({
     title: filter.clean(track.name),
     artist: track.artists
       .map((_artist) => filter.clean(_artist.name))

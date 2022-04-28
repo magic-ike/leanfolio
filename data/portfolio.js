@@ -77,11 +77,11 @@ const skills = [
 const activity = {
   // all the properties are optional - can be set to false/0 or deleted
   // if neither of the first 2 properties are true, Activity section won't show up
-  // the maximum top track count is 50
+  // the default top track count is 3, the minimum is 1, and the maximum is 50
   showNowPlaying: true,
   showTopTracks: true,
-  topTrackCount: 3,
   hideExplicitTracks: true,
+  topTrackCount: 3,
 }
 
 const contact = {
