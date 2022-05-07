@@ -6,7 +6,7 @@ import Filter from 'bad-words'
 const filter = new Filter()
 
 export default async function handler(
-  req: NextApiRequest,
+  _req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (!spotifyCredsAreValid) res.json([])

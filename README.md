@@ -108,7 +108,7 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 }
 ```
 
-- Save `$REFRESH_TOKEN` as this is your Refresh Token. This token will last for a very long time unless you revoke access.
+- Save `$REFRESH_TOKEN` as this is your Refresh Token. This token will last indefinitely unless you revoke access.
 
 - After running the last command, you may instead get the following output:
 
