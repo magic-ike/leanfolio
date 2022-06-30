@@ -22,19 +22,12 @@
 
 .about__contact {
   justify-content: center;
+  gap: 1em;
 }
 
 .about__desc,
 .about__contact {
   margin-top: 2.4em;
-}
-
-.about .btn--outline {
-  margin-right: 1.2em;
-}
-
-.about .link--icon {
-  margin-right: 0.8em;
 }
 
 @media (max-width: 600px) {

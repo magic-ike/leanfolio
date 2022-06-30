@@ -1,6 +1,6 @@
 # Spotfolio
 
-A portfolio template built with Next.js that uses the Spotify API to let you optionally showcase your music preferences. This repo was forked from the Cleanfolio repo which you can find [here](https://github.com/rajshekhar26/cleanfolio).
+A portfolio template built with Next.js that uses the Spotify Web API to let you optionally showcase your music preferences. This repo was forked from the Cleanfolio repo which you can find [here](https://github.com/rajshekhar26/cleanfolio).
 
 ## Preview
 
@@ -12,7 +12,7 @@ A portfolio template built with Next.js that uses the Spotify API to let you opt
 
 - Spotfolio uses the [Next.js](https://nextjs.org/) framework which lets you take advantage of [Next.js API routes](https://nextjs.org/docs/api-routes/introduction) among other features. API routes allow you to build both the site's front-end and its API with the same framework and deploy them to the same environment, e.g., [Vercel](https://vercel.com). This means that, if you want to, you can expand Spotfolio's API to your liking with minimal overhead.
 
-- Spotfolio integrates with the [Spotify API](https://developer.spotify.com/documentation/web-api/) by default to let you **optionally** showcase the song you're currently listening to and/or your top tracks. Explicit tracks are hidden by default but this can be changed.
+- Spotfolio integrates with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) by default to let you **optionally** showcase the track you're currently listening to and/or your top tracks. Explicit tracks are hidden by default but this can be changed.
 
 - Spotfolio integrates with Google Analytics by default to let you **optionally** track visitor activity on your portfolio.
 
@@ -79,16 +79,14 @@ To get the Client ID, Client Secret, and Refresh Token, you'll need to do the fo
 - Navigate to the following URL in your browser (replace `$CLIENT_ID` with your actual Client ID):
 
 ```shell
-https://accounts.spotify.com/authorize?client_id=$CLIENT_ID&response_type=code&redirect_uri=http
-%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20
-user-top-read
+https://accounts.spotify.com/authorize?client_id=$CLIENT_ID&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20user-top-read
 ```
 
 - After authorizing, you should be redirected to your redirect URI. In the URL, there should be a **very long** `code` query parameter like so:
 
-> localhost:3000/?**code=NApCCg..BkWtQ**
+> http://localhost:8080?code=**NApCCg..BkWtQ**
 
-- The value after `code=` is your Authorization Code. Save it for later.
+- This is your Authorization Code. Save it for later.
 
 - Now we're ready to get the Refresh Token. Run the following cURL command in your terminal (replace `$CLIENT_ID`, `$CLIENT_SECRET`, and `$CODE` with your actual Client ID, Client Secret, and Authorization Code respectively)
 
@@ -102,9 +100,9 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 {
     "access_token": "$ACCESS_TOKEN",
     "token_type": "Bearer",
+    "scope": "user-read-currently-playing user-top-read"
     "expires_in": 3600,
     "refresh_token": "$REFRESH_TOKEN",
-    "scope": "playlist-modify-private"
 }
 ```
 
