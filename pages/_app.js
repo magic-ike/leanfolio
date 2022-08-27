@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { about } from '../data/portfolio'
 import { ThemeProvider } from '../contexts/theme'
-import { ActivityProvider } from '../contexts/activity'
 import '../styles/index.css'
 import '../styles/App.css'
 import '../styles/About.css'
@@ -12,8 +11,6 @@ import '../styles/ProjectCard.css'
 import '../styles/Projects.css'
 import '../styles/ScrollToTop.css'
 import '../styles/Skills.css'
-import '../styles/Activity.css'
-import '../styles/TrackCard.css'
 import 'animate.css'
 
 // google analytics
@@ -41,9 +38,7 @@ function MyApp({ Component, pageProps }) {
         <title>{about.name || 'Portfolio'}</title>
       </Head>
       <ThemeProvider>
-        <ActivityProvider>
-          <Component {...pageProps} />
-        </ActivityProvider>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   )

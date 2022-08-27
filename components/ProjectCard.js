@@ -4,49 +4,61 @@ import LaunchIcon from '@material-ui/icons/Launch'
 
 const ProjectCard = ({ project }) => (
   <div className='project'>
-    {project.name && <h3>{project.name}</h3>}
+    <div>
+      {project.thumbnail && (
+        <img
+          className='project__thumbnail'
+          src={project.thumbnail}
+          alt='thumbnail'
+        />
+      )}
 
-    {project.description && (
-      <div className='project__description paragraph__list'>
-        {project.description.map((item) => (
-          <p key={uniqid()}>{item}</p>
-        ))}
-      </div>
-    )}
+      {project.name && <h3>{project.name}</h3>}
 
-    {project.stack && (
-      <ul className='project__stack'>
-        {project.stack.map((item) => (
-          <li key={uniqid()} className='project__stack-item'>
-            {item}
-          </li>
-        ))}
-      </ul>
-    )}
+      {project.description && (
+        <div className='project__description paragraph__list'>
+          {project.description.map((item) => (
+            <p key={uniqid()}>{item}</p>
+          ))}
+        </div>
+      )}
+    </div>
 
-    {project.sourceCode && (
-      <a
-        href={project.sourceCode}
-        target='_blank'
-        rel='noreferrer'
-        aria-label='source code'
-        className='link link--icon'
-      >
-        <GitHubIcon />
-      </a>
-    )}
+    <div>
+      {project.stack && (
+        <ul className='project__stack'>
+          {project.stack.map((item) => (
+            <li key={uniqid()} className='project__stack-item'>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
 
-    {project.livePreview && (
-      <a
-        href={project.livePreview}
-        target='_blank'
-        rel='noreferrer'
-        aria-label='live preview'
-        className='link link--icon'
-      >
-        <LaunchIcon />
-      </a>
-    )}
+      {project.sourceCode && (
+        <a
+          href={project.sourceCode}
+          target='_blank'
+          rel='noreferrer'
+          aria-label='source code'
+          className='link link--icon'
+        >
+          <GitHubIcon />
+        </a>
+      )}
+
+      {project.livePreview && (
+        <a
+          href={project.livePreview}
+          target='_blank'
+          rel='noreferrer'
+          aria-label='live preview'
+          className='link link--icon'
+        >
+          <LaunchIcon />
+        </a>
+      )}
+    </div>
   </div>
 )
 

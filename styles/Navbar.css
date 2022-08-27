@@ -1,5 +1,5 @@
 .nav {
-  height: var(--navabar-height);
+  height: var(--navbar-height);
   justify-content: center;
   position: sticky;
   top: 0;
@@ -14,17 +14,17 @@
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
-  padding-top: 0.4em;
+  padding-top: 0.4rem;
   display: flex;
   justify-content: space-between;
 }
 
 .nav__list {
-  margin-right: 1.5em;
+  margin-right: 1.5rem;
   display: flex;
 }
 .nav__list-item {
-  margin-right: 1.5em;
+  margin-right: 1.5rem;
 }
 
 .nav__hamburger {
@@ -45,7 +45,7 @@
   }
 
   .nav__list-item {
-    margin: 0.5em 0;
+    margin: 0.5rem 0;
   }
 
   .nav__hamburger {

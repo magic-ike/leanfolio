@@ -1,7 +1,7 @@
 const about = {
   // all the properties are optional - can be left empty or deleted
   // each element in the description array is a paragraph
-  name: 'John Smith',
+  name: 'John Doe',
   role: 'Software Engineer',
   company: 'Acme Labs',
   description: [
@@ -20,6 +20,7 @@ const projects = [
   // if there are no projects, Projects section won't show up
   // each element in the description array is a paragraph
   {
+    thumbnail: 'images/placeholder-image.jpeg',
     name: 'Project 1',
     description: [
       'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
@@ -29,6 +30,7 @@ const projects = [
     livePreview: 'https://github.com',
   },
   {
+    thumbnail: 'images/placeholder-image.jpeg',
     name: 'Project 2',
     description: [
       'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
@@ -38,6 +40,7 @@ const projects = [
     livePreview: 'https://github.com',
   },
   {
+    thumbnail: 'images/placeholder-image.jpeg',
     name: 'Project 3',
     description: [
       'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
@@ -47,6 +50,7 @@ const projects = [
     livePreview: 'https://github.com',
   },
   {
+    thumbnail: 'images/placeholder-image.jpeg',
     name: 'Project 4',
     description: [
       'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
@@ -74,19 +78,9 @@ const skills = [
   'Enzyme',
 ]
 
-const activity = {
-  // all the properties are optional - can be set to false/0 or deleted
-  // if neither of the first 2 properties are true, Activity section won't show up
-  // the default top track count is 3, the minimum is 1, and the maximum is 50
-  showNowPlaying: true,
-  showTopTracks: true,
-  hideExplicitTracks: true,
-  topTrackCount: 3,
-}
-
 const contact = {
   // email is optional - if left empty Contact section won't show up
-  email: 'johnsmith@mail.com',
+  email: 'johndoe@mail.com',
 }
 
-export { about, projects, skills, activity, contact }
+export { about, projects, skills, contact }

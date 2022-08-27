@@ -4,17 +4,14 @@ import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../contexts/theme'
-import { ActivityContext } from '../contexts/activity'
-import { about, projects, skills, activity, contact } from '../data/portfolio'
+import { about, projects, skills, contact } from '../data/portfolio'
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
-  const [{ nowPlaying, topTracks }] = useContext(ActivityContext)
   const [showNavList, setShowNavList] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   const { name } = about
-  const { showNowPlaying, showTopTracks } = activity
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,18 +77,6 @@ const Navbar = () => {
                 className='link link--nav'
               >
                 Skills
-              </a>
-            </li>
-          )}
-
-          {((showNowPlaying && nowPlaying) || (showTopTracks && topTracks)) && (
-            <li className='nav__list-item'>
-              <a
-                href='#activity'
-                onClick={hideNavList}
-                className='link link--nav'
-              >
-                Activity
               </a>
             </li>
           )}
