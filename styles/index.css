@@ -12,8 +12,8 @@
 }
 
 :root {
-  scroll-behavior: smooth;
   --navbar-height: 5rem;
+  scroll-behavior: smooth;
 }
 
 body {

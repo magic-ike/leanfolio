@@ -47,3 +47,9 @@
 .project .link--icon:last-child {
   margin-right: 0;
 }
+
+@media (min-width: 777px) {
+  .project__last-in-odd-list {
+    translate: calc(50% + (var(--projects-grid-gap) / 2));
+  }
+}

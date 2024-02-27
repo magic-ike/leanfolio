@@ -11,9 +11,6 @@
 }
 
 .nav__content {
-  max-width: 700px;
-  width: 90%;
-  margin: 0 auto;
   padding-top: 0.4rem;
   display: flex;
   justify-content: space-between;

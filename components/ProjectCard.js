@@ -2,8 +2,12 @@ import uniqid from 'uniqid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 
-const ProjectCard = ({ project }) => (
-  <div className='project'>
+const ProjectCard = ({ project, isLastInOddList }) => (
+  <div
+    className={
+      'project' + (isLastInOddList ? ' project__last-in-odd-list' : '')
+    }
+  >
     {project.thumbnail && (
       <img
         className='project__thumbnail'

@@ -30,7 +30,7 @@ function App() {
     <div id='top' className='app'>
       <Navbar />
 
-      <main>
+      <main className='column'>
         <About />
         <div className='animate__animated animate__fadeIn animate__delay-5s'>
           <Projects />

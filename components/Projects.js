@@ -12,8 +12,14 @@ const Projects = () => {
       <h2 className='section__title'>Projects</h2>
 
       <div className='projects__grid'>
-        {projects.map((project) => (
-          <ProjectCard key={uniqid()} project={project} />
+        {projects.map((project, i) => (
+          <ProjectCard
+            key={uniqid()}
+            project={project}
+            isLastInOddList={
+              projects.length % 2 === 1 && i === projects.length - 1
+            }
+          />
         ))}
       </div>
     </section>

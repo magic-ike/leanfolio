@@ -1,6 +1,13 @@
 .projects__grid {
+  --projects-grid-gap: 2rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: var(--projects-grid-gap);
+}
+
+@media (min-width: 777px) {
+  .projects__grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }

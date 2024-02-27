@@ -3,7 +3,12 @@
   line-height: 1.5;
 }
 
-main {
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.column {
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
@@ -17,11 +22,6 @@ main {
   text-align: center;
   margin-bottom: 1rem;
   text-transform: uppercase;
-}
-
-.center {
-  display: flex;
-  align-items: center;
 }
 
 .paragraph__list {
