@@ -4,35 +4,33 @@ import LaunchIcon from '@material-ui/icons/Launch'
 
 const ProjectCard = ({ project }) => (
   <div className='project'>
-    <div>
-      {project.thumbnail && (
-        <img
-          className='project__thumbnail'
-          src={project.thumbnail}
-          alt='thumbnail'
-        />
-      )}
+    {project.thumbnail && (
+      <img
+        className='project__thumbnail'
+        src={project.thumbnail}
+        alt='thumbnail'
+      />
+    )}
 
-      {project.name && <h3>{project.name}</h3>}
+    {project.name && <h3>{project.name}</h3>}
 
-      {project.description && (
-        <div className='project__description paragraph__list'>
-          {project.description.map((item) => (
-            <p key={uniqid()}>{item}</p>
-          ))}
-        </div>
-      )}
+    {project.description && (
+      <div className='project__description paragraph__list'>
+        {project.description.map((item) => (
+          <p key={uniqid()}>{item}</p>
+        ))}
+      </div>
+    )}
 
-      {project.stack && (
-        <ul className='project__stack'>
-          {project.stack.map((item) => (
-            <li key={uniqid()} className='project__stack-item'>
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    {project.stack && (
+      <ul className='project__stack'>
+        {project.stack.map((item) => (
+          <li key={uniqid()} className='project__stack-item'>
+            {item}
+          </li>
+        ))}
+      </ul>
+    )}
 
     <div>
       {project.sourceCode && (
