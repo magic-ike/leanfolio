@@ -22,9 +22,7 @@ const ProjectCard = ({ project }) => (
           ))}
         </div>
       )}
-    </div>
 
-    <div>
       {project.stack && (
         <ul className='project__stack'>
           {project.stack.map((item) => (
@@ -34,7 +32,9 @@ const ProjectCard = ({ project }) => (
           ))}
         </ul>
       )}
+    </div>
 
+    <div>
       {project.sourceCode && (
         <a
           href={project.sourceCode}
