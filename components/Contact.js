@@ -1,4 +1,3 @@
-import Spacer from './Spacer'
 import { contact } from '../data/portfolio'
 
 const Contact = () => {
@@ -9,7 +8,6 @@ const Contact = () => {
       className='section contact center animate__animated animate__fadeIn animate__delay-5s'
       id='contact'
     >
-      <Spacer height={2} />
       <h2 className='section__title'>Contact</h2>
       <a href={`mailto:${contact.email}`} target='_blank' rel='noreferrer'>
         <span type='button' className='btn btn--outline'>
