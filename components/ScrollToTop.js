@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 
 const ScrollToTop = () => {
@@ -6,8 +6,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () =>
-      window.pageYOffset > 500 ? setIsVisible(true) : setIsVisible(false)
-
+      window.scrollY > 500 ? setIsVisible(true) : setIsVisible(false)
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])

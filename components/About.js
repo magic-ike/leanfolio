@@ -8,46 +8,56 @@ const About = () => {
   const { name, role, company, description, resume, social, greetingEmoji } =
     about
   const firstName = name ? name.split(' ')[0] : null
+  const fadeInAnimationClassName =
+    'animate__animated animate__fadeIn animate__delay-5s'
 
   return (
     <div className='about'>
       <div className='about__pseudo-padding about__pseudo-padding-top' />
 
-      {firstName && (
-        <h1 className='about__greeting animate__animated animate__fadeInUp animate__delay-1s'>
-          Hey, I&apos;m <span className='text--strong'>{firstName}</span>.
-          {greetingEmoji && <span> {greetingEmoji}</span>}
-        </h1>
-      )}
-
-      {role && (
-        <h1 className='about__role animate__animated animate__fadeInUp animate__delay-3s'>
-          I&apos;m a {role}
-          {company && (
-            <span>
-              {' '}
-              at <span className='text--strong'>{company}</span>
-            </span>
+      {(firstName || role) && (
+        <div>
+          {firstName && (
+            <h1 className='about__greeting animate__animated animate__fadeInUp animate__delay-1s'>
+              Hey, I&apos;m <span className='text--strong'>{firstName}</span>.
+              {greetingEmoji && <span> {greetingEmoji}</span>}
+            </h1>
           )}
-          .
-        </h1>
+
+          {role && (
+            <h1 className='about__role animate__animated animate__fadeInUp animate__delay-3s'>
+              I&apos;m a {role}
+              {company && (
+                <span>
+                  {' '}
+                  at <span className='text--strong'>{company}</span>
+                </span>
+              )}
+              .
+            </h1>
+          )}
+        </div>
       )}
 
-      <div className='animate__animated animate__fadeIn animate__delay-5s'>
-        {description && (
-          <div className='about__desc paragraph__list'>
-            <Hyphenated>
-              {description.map((item) => (
-                <p key={uniqid()}>{item}</p>
-              ))}
-              {/* fragments added to prevent react-hyphen error when description length < 2 */}
-              <></>
-              <></>
-            </Hyphenated>
-          </div>
-        )}
+      {description && (
+        <div className={fadeInAnimationClassName}>
+          {description && (
+            <div className='about__desc paragraph__list'>
+              <Hyphenated>
+                {description.map((item) => (
+                  <p key={uniqid()}>{item}</p>
+                ))}
+                {/* fragments added to prevent react-hyphen error when description length < 2 */}
+                <></>
+                <></>
+              </Hyphenated>
+            </div>
+          )}
+        </div>
+      )}
 
-        <div className='about__contact center'>
+      {(resume || social) && (
+        <div className={`about__contact center ${fadeInAnimationClassName}`}>
           {resume && (
             <a href={resume} target='_blank' rel='noreferrer'>
               <span type='button' className='btn btn--outline'>
@@ -84,7 +94,7 @@ const About = () => {
             </>
           )}
         </div>
-      </div>
+      )}
 
       <div className='about__pseudo-padding' />
     </div>

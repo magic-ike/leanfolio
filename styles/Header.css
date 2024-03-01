@@ -1,0 +1,12 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header.shadow {
+  box-shadow: var(--shadow);
+}

@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Leanfolio</h1>
-  <img src="docs/preview.gif" alt="Preview" width="100%">
+  <img src="docs/preview.png" alt="Preview" width="100%">
   <br>
   <br>
   <p>A minimalist portfolio template for developers built with Next.js</p>

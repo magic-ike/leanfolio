@@ -1,7 +1,8 @@
 const about = {
-  // all the properties are optional - can be left empty or deleted
-  // each element in the description array is a paragraph
+  // each of these properties is optional - they can be left empty or deleted
+  // each element in the `description` array will be treated as a separate paragraph
   name: 'John Doe',
+  greetingEmoji: '👋',
   role: 'Software Engineer',
   company: 'Acme Labs',
   description: [
@@ -9,16 +10,15 @@ const about = {
   ],
   resume: 'https://example.com',
   social: {
-    linkedin: 'https://linkedin.com',
     github: 'https://github.com',
+    linkedin: 'https://linkedin.com',
   },
-  greetingEmoji: '👋',
 }
 
 const projects = [
   // projects can be added and removed
-  // if there are no projects, Projects section won't show up
-  // each element in the description array is a paragraph
+  // if the array is left empty, the "Projects" section won't render
+  // each element in each `description` array will be treated as a separate paragraph
   {
     thumbnail: 'images/placeholder-image.jpeg',
     name: 'Project 1',
@@ -27,7 +27,7 @@ const projects = [
     ],
     stack: ['SASS', 'TypeScript', 'React'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+    livePreview: 'https://example.com',
   },
   {
     thumbnail: 'images/placeholder-image.jpeg',
@@ -37,7 +37,7 @@ const projects = [
     ],
     stack: ['SASS', 'TypeScript', 'React'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+    livePreview: 'https://example.com',
   },
   {
     thumbnail: 'images/placeholder-image.jpeg',
@@ -47,7 +47,7 @@ const projects = [
     ],
     stack: ['SASS', 'TypeScript', 'React'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+    livePreview: 'https://example.com',
   },
   {
     thumbnail: 'images/placeholder-image.jpeg',
@@ -57,13 +57,13 @@ const projects = [
     ],
     stack: ['SASS', 'TypeScript', 'React'],
     sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+    livePreview: 'https://example.com',
   },
 ]
 
 const skills = [
   // skills can be added or removed
-  // if there are no skills, Skills section won't show up
+  // if the array is left empty, the "Skills" section won't render
   'HTML',
   'CSS',
   'JavaScript',
@@ -79,8 +79,9 @@ const skills = [
 ]
 
 const contact = {
-  // email is optional - if left empty Contact section won't show up
-  email: 'johndoe@mail.com',
+  // the `email` property is optional - it can be left empty or deleted
+  // if so, the "Contact" section won't render
+  email: 'johndoe@email.com',
 }
 
 export { about, projects, skills, contact }

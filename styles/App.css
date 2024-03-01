@@ -3,19 +3,19 @@
   line-height: 1.5;
 }
 
-.center {
-  display: flex;
-  align-items: center;
-}
-
-.column {
+.container {
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+}
+
 .section {
-  padding-top: 5rem;
+  padding-top: var(--header-height);
 }
 
 .section__title {

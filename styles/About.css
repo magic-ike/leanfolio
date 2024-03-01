@@ -1,10 +1,12 @@
 .about {
-  min-height: calc(100vh - var(--navbar-height));
+  --about-column-gap: 2.4rem;
+  min-height: calc(100vh - var(--header-height));
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--about-column-gap);
 }
 
 .about__pseudo-padding {
@@ -12,7 +14,7 @@
 }
 
 .about__pseudo-padding-top {
-  min-height: 5rem;
+  min-height: calc(3rem - var(--about-column-gap));
 }
 
 .about__desc {
@@ -22,23 +24,11 @@
 
 .about__contact {
   justify-content: center;
+  gap: 1rem;
 }
 
-.about__contact > * {
-  margin-right: 1rem;
-}
-
-.about__contact > *:last-child {
-  margin-right: 0;
-}
-
-.about__desc,
-.about__contact {
-  margin-top: 2.4rem;
-}
-
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .about__pseudo-padding-top {
-    min-height: 3rem;
+    min-height: calc(5rem - var(--about-column-gap));
   }
 }

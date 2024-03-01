@@ -6,7 +6,10 @@ const Skills = () => {
   if (!skills.length) return null
 
   return (
-    <section className='section skills' id='skills'>
+    <section
+      className='section skills animate__animated animate__fadeIn animate__delay-5s'
+      id='skills'
+    >
       <Spacer height={2} />
       <h2 className='section__title'>Skills</h2>
       <ul className='skills__list'>

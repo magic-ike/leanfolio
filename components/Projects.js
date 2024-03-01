@@ -7,19 +7,16 @@ const Projects = () => {
   if (!projects.length) return null
 
   return (
-    <section id='projects' className='section projects'>
+    <section
+      className='section projects animate__animated animate__fadeIn animate__delay-5s'
+      id='projects'
+    >
       <Spacer height={2} />
       <h2 className='section__title'>Projects</h2>
 
-      <div className='projects__grid'>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={uniqid()}
-            project={project}
-            isLastInOddList={
-              projects.length % 2 === 1 && i === projects.length - 1
-            }
-          />
+      <div className='projects__column'>
+        {projects.map((project) => (
+          <ProjectCard key={uniqid()} project={project} />
         ))}
       </div>
     </section>

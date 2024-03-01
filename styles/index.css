@@ -12,7 +12,7 @@
 }
 
 :root {
-  --navbar-height: 5rem;
+  --header-height: 5rem;
   scroll-behavior: smooth;
 }
 
@@ -54,7 +54,7 @@ h4 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 h2 {
@@ -81,8 +81,8 @@ button {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
 }

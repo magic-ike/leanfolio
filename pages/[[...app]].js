@@ -1,16 +1,16 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import { ThemeContext } from '../contexts/theme'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header'
 import About from '../components/About'
-import Skills from '../components/Skills'
 import Projects from '../components/Projects'
+import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import ScrollToTop from '../components/ScrollToTop'
 import Footer from '../components/Footer'
 
 function App() {
-  const [isMounted, setIsMounted] = useState(false)
   const [{ themeName }] = useContext(ThemeContext)
+  const rootRef = useRef(null)
 
   useEffect(() => {
     const oldThemeName = themeName === 'dark' ? 'light' : 'dark'
@@ -19,27 +19,31 @@ function App() {
   }, [themeName])
 
   useEffect(() => {
-    setIsMounted(true)
+    window.setTimeout(() => {
+      rootRef.current?.style.removeProperty('pointer-events')
+    }, 5000)
   }, [])
 
-  if (!isMounted) {
-    return null
-  }
-
   return (
-    <div id='top' className='app'>
-      <Navbar />
+    <div
+      ref={rootRef}
+      className='app'
+      id='top'
+      style={{ pointerEvents: 'none' }}
+    >
+      <Header />
 
-      <main className='column'>
+      <main className='container'>
         <About />
-        <div className='animate__animated animate__fadeIn animate__delay-5s'>
-          <Projects />
-          <Skills />
-          <Contact />
-        </div>
+        <Projects />
+        <Skills />
+        <Contact />
       </main>
 
-      <ScrollToTop />
+      <div className='animate__animated animate__fadeIn animate__delay-5s'>
+        <ScrollToTop />
+      </div>
+
       <Footer />
     </div>
   )
