@@ -7,21 +7,22 @@ const ThemeProvider = ({ children }) => {
   const [themeName, setThemeName] = useState('light')
 
   useEffect(() => {
-    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     setThemeName(
       localStorage.getItem('themeName') ||
-        (darkMediaQuery.matches ? 'dark' : 'light')
+        (window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light')
     )
   }, [])
 
   const toggleTheme = () => {
-    const name = themeName === 'dark' ? 'light' : 'dark'
-    localStorage.setItem('themeName', name)
-    setThemeName(name)
+    const newThemeName = themeName === 'dark' ? 'light' : 'dark'
+    localStorage.setItem('themeName', newThemeName)
+    setThemeName(newThemeName)
   }
 
   return (
-    <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+    <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )

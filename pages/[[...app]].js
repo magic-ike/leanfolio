@@ -9,7 +9,7 @@ import ScrollToTop from '../components/ScrollToTop'
 import Footer from '../components/Footer'
 
 function App() {
-  const [{ themeName }] = useContext(ThemeContext)
+  const { themeName } = useContext(ThemeContext)
   const rootRef = useRef(null)
 
   useEffect(() => {

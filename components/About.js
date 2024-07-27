@@ -5,9 +5,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import { about } from '../data/portfolio'
 
 const About = () => {
-  const { name, role, company, description, resume, social, greetingEmoji } =
+  const { names, role, company, description, resume, social, greetingEmoji } =
     about
-  const firstName = name ? name.split(' ')[0] : null
+  const firstName = names[0]
   const fadeInAnimationClassName =
     'animate__animated animate__fadeIn animate__delay-5s'
 

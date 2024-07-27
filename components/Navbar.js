@@ -1,15 +1,17 @@
 import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../contexts/theme'
-import { about, projects, skills, contact } from '../data/portfolio'
+import { header, about, projects, skills, contact } from '../data/portfolio'
 import CloseIcon from '@material-ui/icons/Close'
 import MenuIcon from '@material-ui/icons/Menu'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 
 const Navbar = () => {
-  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
   const [showNavList, setShowNavList] = useState(false)
-  const { name } = about
+  const { themeName, toggleTheme } = useContext(ThemeContext)
+  const { wordmark } = header
+  const { names } = about
+  const defaultWordmark = 'About Me'
 
   const toggleNavListOverlay = () => {
     showNavList
@@ -24,11 +26,11 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const hideNavListOverlayIfScreenTooBig = () =>
+    const hideNavListOverlayIfScreenIsTooBig = () =>
       window.innerWidth > 600 ? hideNavListOverlay() : null
-    window.addEventListener('resize', hideNavListOverlayIfScreenTooBig)
+    window.addEventListener('resize', hideNavListOverlayIfScreenIsTooBig)
     return () =>
-      window.removeEventListener('resize', hideNavListOverlayIfScreenTooBig)
+      window.removeEventListener('resize', hideNavListOverlayIfScreenIsTooBig)
   }, [])
 
   return (
@@ -37,10 +39,10 @@ const Navbar = () => {
         className='nav__list'
         style={{ display: showNavList ? 'flex' : null }}
       >
-        <li className='nav__list-item'>
+        <li className='nav__list-item nav__scroll-top'>
           <strong>
             <a href='#top' onClick={hideNavListOverlay} className='link'>
-              {name || 'About Me'}
+              {wordmark || names.join(' ') || defaultWordmark}
             </a>
           </strong>
         </li>
@@ -91,11 +93,21 @@ const Navbar = () => {
         {showNavList ? <CloseIcon /> : <MenuIcon />}
       </button>
 
+      <div className='nav__scroll-top'>
+        <strong>
+          <a href='#top' onClick={hideNavListOverlay} className='link'>
+            {wordmark ||
+              names.map((name) => name[0]).join('') ||
+              defaultWordmark}
+          </a>
+        </strong>
+      </div>
+
       <button
         type='button'
         onClick={toggleTheme}
         aria-label='toggle theme'
-        className='btn btn--icon nav__button nav__theme'
+        className='btn btn--icon nav__button'
       >
         {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
       </button>

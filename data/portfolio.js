@@ -1,7 +1,14 @@
+const header = {
+  // the `wordmark` property is optional - it can be left empty or deleted
+  // if so, it will be overwritten by your full name, or a default wordmark if the full name is invalid
+  wordmark: '',
+}
+
 const about = {
   // each of these properties is optional - they can be left empty or deleted
+  // the first element in the `names` array will be treated as your first name, and all the elements combined will be treated as your full name
   // each element in the `description` array will be treated as a separate paragraph
-  name: 'John Doe',
+  names: ['John', 'Doe'],
   greetingEmoji: '👋',
   role: 'Software Engineer',
   company: 'Acme Labs',
@@ -84,4 +91,4 @@ const contact = {
   email: 'johndoe@email.com',
 }
 
-export { about, projects, skills, contact }
+export { header, about, projects, skills, contact }

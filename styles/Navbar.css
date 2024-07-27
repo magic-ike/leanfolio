@@ -25,6 +25,14 @@
   z-index: 1;
 }
 
+li.nav__scroll-top {
+  display: none;
+}
+
+div.nav__scroll-top {
+  font-size: 1.5rem;
+}
+
 @media (min-width: 600px) {
   .nav__list {
     width: unset;
@@ -44,6 +52,14 @@
   }
 
   .nav__hamburger {
+    display: none;
+  }
+
+  li.nav__scroll-top {
+    display: unset;
+  }
+
+  div.nav__scroll-top {
     display: none;
   }
 }
