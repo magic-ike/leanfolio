@@ -8,17 +8,18 @@ const about = {
   // each of these properties is optional - they can be left empty or deleted
   // the first element in the `names` array will be treated as your first name, and all the elements combined will be treated as your full name
   // each element in the `description` array will be treated as a separate paragraph
-  names: ['John', 'Doe'],
-  greetingEmoji: '👋',
+  names: ['Ike', 'Ofoegbu'],
+  greetingEmoji: '👋🏽',
   role: 'Software Engineer',
-  company: 'Acme Labs',
+  // company: 'Acme Labs',
   description: [
-    'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
+    "Specifically, I'm a web developer specializing in frontend development and server-side scripting (I've also dabbled in mobile app development among other things). My passion lies in building web infrastructure that's both performant and scalable.",
+    "I graduated from UCLA with a B.S. in Cognitive Science and a Specialization in Computing. In school, I learned about the applications of Computer Science within the study of intelligent systems, both real and artificial. Since then, I've strived to use software as a medium for solving more general problems.",
   ],
-  resume: 'https://example.com',
+  // resume: 'https://example.com',
   social: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/magic-ike',
+    linkedin: 'https://linkedin.com/in/ike-ofoegbu',
   },
 }
 
@@ -27,68 +28,85 @@ const projects = [
   // if the array is left empty, the "Projects" section won't render
   // each element in each `description` array will be treated as a separate paragraph
   {
-    thumbnail: 'images/placeholder-image.jpeg',
-    name: 'Project 1',
+    thumbnail: 'images/data-card-for-spotify-preview.png',
+    name: 'Data Card for Spotify',
     description: [
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
+      'A web service for embedding dynamically generated Spotify data anywhere on the web',
+      'Receives ~200K API calls per month',
     ],
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://example.com',
+    stack: [
+      'TypeScript',
+      'React',
+      'Node.js',
+      'Express',
+      'Spotify Web API',
+      'MongoDB',
+      'Redis',
+    ],
+    sourceCode: 'https://github.com/magic-ike/spotify-data-card',
+    livePreview: 'https://www.data-card-for-spotify.com',
   },
   {
-    thumbnail: 'images/placeholder-image.jpeg',
-    name: 'Project 2',
+    thumbnail:
+      'https://raw.githubusercontent.com/magic-ike/atalog-landing-page/master/docs/atalog-site-preview.png',
+    name: 'Atalog',
     description: [
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
+      'A closed-source social networking and messaging mobile app for iOS',
+      '3K+ lifetime installs',
     ],
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://example.com',
+    stack: [
+      'Swift',
+      'Firebase Auth',
+      'Cloud Firestore',
+      'Cloud Storage',
+      'OneSignal',
+    ],
+    livePreview: 'https://atalog.co',
   },
   {
-    thumbnail: 'images/placeholder-image.jpeg',
-    name: 'Project 3',
+    thumbnail:
+      'https://raw.githubusercontent.com/magic-ike/laser-ship-links/master/assets/images/laser-ship-app-icon.webp',
+    name: 'Laser Ship',
     description: [
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
+      'A closed-source vertically scrolling shooter mobile game for iOS and Android',
+      '5.5K+ lifetime installs',
     ],
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://example.com',
-  },
-  {
-    thumbnail: 'images/placeholder-image.jpeg',
-    name: 'Project 4',
-    description: [
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    ],
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://example.com',
+    stack: ['C#', 'Unity'],
+    livePreview: 'https://magic-ike.github.io/laser-ship-links/',
   },
 ]
 
 const skills = [
   // skills can be added or removed
   // if the array is left empty, the "Skills" section won't render
+  'JavaScript (ES5/ES6+)',
+  'TypeScript',
   'HTML',
   'CSS',
-  'JavaScript',
-  'TypeScript',
+  'PHP',
+  'Python',
+  'Go',
+  'Swift',
+  'C++',
   'React',
-  'Redux',
-  'SASS',
-  'Material UI',
-  'Git',
-  'CI/CD',
   'Jest',
-  'Enzyme',
+  'Flow',
+  'ESLint',
+  'Babel',
+  'webpack',
+  'npm',
+  'Yarn',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'MySQL',
+  'Redis',
 ]
 
 const contact = {
   // the `email` property is optional - it can be left empty or deleted
   // if so, the "Contact" section won't render
-  email: 'johndoe@email.com',
+  email: 'ikeofoegbu99@gmail.com',
 }
 
 export { header, about, projects, skills, contact }
